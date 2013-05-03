@@ -57,9 +57,11 @@
     ],
     function(){
       require(['<%= [].concat(scripts.specs,scripts.reporters).join("','") %>'], function(){
-        require(['<%= scripts.start.join("','") %>'], function(){
-          // good to go! Our tests should already be running.
-        })
+        window.setTimeout(function () {
+          require(['<%= scripts.start.join("','") %>'], function(){
+            // good to go! Our tests should already be running.
+          })
+        }, 100);
       })
     }
     )
